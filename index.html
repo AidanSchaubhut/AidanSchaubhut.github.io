@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title> Aidan's Website </title>
+        <style>
+        .header {
+            font-family: Comic Sans MS;
+        }
+    body {
+        background: rgb(48, 191, 186);
+        color: rgb(45, 45, 45);
+        padding: 10px;
+        font-family: Arial;
+    }
+    header {
+        font-size: 1.5em;
+        font-weight: bold;
+    }
+    #all-contents {
+        max-width: 800px;
+        margin: auto;
+    }
+
+    /* navigation menu */
+    nav {
+        background: rgb(239, 80, 41);
+        margin-bottom: 20px;
+        display: flex;
+        padding: 10px;
+        border-radius: 10% / 50%;
+    }
+    nav header {
+        display: flex;
+        align-items: center;
+        color: rgb(255, 255, 255);
+        flex: 1;
+    }
+    nav ul {
+        list-style-image: none;
+    }
+    nav li {
+        display: inline-block;
+        padding: 0 10px;
+    }
+    nav a {
+        text-decoration: none;
+        color: #fff;
+    }
+
+    /* main container area beneath menu */
+    main {
+        background: rgb(245, 238, 219);
+        display: flex;
+    }
+    .sidebar {
+        margin-right: 25px;
+        padding: 10px;
+    }
+    .sidebar img {
+        width: 200px;
+    }
+    .content {
+        flex: 1;
+        padding: 15px;
+    }
+    .interests header {
+        font-size: 1.25em;
+    }
+</style>
+    </head>
+    <body>
+        <div id="all-contents">
+            <nav>
+                <header class="header"> Aidan's Website </header>
+                <ul class="header">
+                    <li ><a href="idex.html">Home</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                </ul>
+            </nav>
+            
+            <main>
+                <div class="sidebar">
+                    <img src="data:image/jpeg;base64,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"> 
+                </div>
+                
+                <div class="content">
+                    <header> Aidan Schaubhut </header>
+                    <p> Student at Hahnville High School </p>
+                    <div class="interests">
+                        <h1> Interests </h1>
+                        <ul>
+                            <li> Gaming! </li>
+                            <li> Coding! </li>
+                            <li> Netflix! </li>
+                        </ul>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </body>
+    
+</html>
