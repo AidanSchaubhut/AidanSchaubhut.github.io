@@ -41,10 +41,10 @@ var level01 = function (window) {
         for(i = 0; i < levelData.gameItems.length; i++){
             var x = levelData.gameItems[i].x;
             var y = levelData.gameItems[i].y;
+            createSawBlade(x, y);
         }
 
-        createSawBlade(x, y);
-    
+
     }
 };
 
