@@ -5,9 +5,10 @@ var level01 = function (window) {
     var draw = window.opspark.draw;
     var createjs = window.createjs;
 
-    window.opspark.runLevelInGame = function(game) {
+    window.opspark.runLevelInGame = function(game, app) {
         // some useful constants
         var groundY = game.groundY;
+        var canvasWidth = app.canvas.width;
 
         // this data will allow us to define all of the
         // behavior of our game
@@ -18,7 +19,8 @@ var level01 = function (window) {
             gameItems: [
                 {type: 'sawblade',x:400,y:groundY},
                 {type: 'sawblade',x:600,y:groundY},
-                {type: 'sawblade',x:900,y:groundY}
+                {type: 'sawblade',x:900,y:groundY},
+                {type: 'rock',x:canvasWidth,y:groundY}
             ]
         };
         window.levelData = levelData;
@@ -43,6 +45,22 @@ var level01 = function (window) {
             var y = levelData.gameItems[i].y;
             createSawBlade(x, y);
         }
+
+        function createRock(){
+            var hitZoneSize = 25;
+            var damageFromObstacle = 10;
+            var myObstacle = game.createObstacle(hitZoneSize,damageFromObstacle);
+            myObstacle.x = x;
+            myObstacle.y = y;
+            game.addGameItem(myObstacle);
+            var obstacleImage = draw.bitmap('img/rock.png');
+            myObstacle.addChild(obstacleImage);
+            obstacleImage.x = -25;
+            obstacleImage.y = -25;
+        }
+
+            createRock(300, groundY);
+
 
 
     }
