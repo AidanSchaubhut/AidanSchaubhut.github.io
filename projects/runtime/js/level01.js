@@ -9,6 +9,7 @@ var level01 = function (window) {
         // some useful constants
         var groundY = game.groundY;
         var canvasWidth = app.canvas.width;
+        var canvasHeight = app.canvas.height;
 
         // this data will allow us to define all of the
         // behavior of our game
@@ -59,7 +60,16 @@ var level01 = function (window) {
             obstacleImage.y = -25;
         }
 
-            createRock(300, groundY);
+           // createRock(300, groundY);
+
+            var enemy =  game.createGameItem('enemy',25);
+            var redSquare = draw.bitmap('img/Alien.png');
+            redSquare.x = -25;
+            redSquare.y = -25;
+            enemy.addChild(redSquare);
+            enemy.x = 400;
+            enemy.y = groundY-50;
+            game.addGameItem(enemy);
 
 
 
