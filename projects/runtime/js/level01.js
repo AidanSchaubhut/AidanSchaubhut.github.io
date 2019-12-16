@@ -29,8 +29,19 @@ var level01 = function (window) {
         game.setDebugMode(true);
 
         // BEGIN EDITING YOUR CODE HERE
-        function createObstacle(nameOf
-
+        // function createObstacle(nameOfObstacle, x, y){
+        //     var hitZoneSize = 25;
+        //     var damageFromObstacle = 10
+        //     var myObstacle = game.createObstacle(hitZoneSize,damageFromObstacle);
+        //     myObstacle.x = x;
+        //     myObstacle.y = y;
+        //     game.addGameItem(myObstacle);
+        //     var obstacleImage = draw.bitmap(nameOfObstacle);
+        //     myObstacle.addChild(obstacleImage);
+        //     obstacleImage.x = -25;
+        //     obstacleImage.y = -25;
+        // }
+        // createObstacle(img/sawBlade.png, 600, 100);
          function createSawBlade(x,y){
             var hitZoneSize = 25;
             var damageFromObstacle = 10;
@@ -43,6 +54,7 @@ var level01 = function (window) {
             obstacleImage.x = -25;
             obstacleImage.y = -25;
         }
+
         for(i = 0; i < levelData.gameItems.length; i++){
             var x = levelData.gameItems[i].x;
             var y = levelData.gameItems[i].y;
@@ -65,19 +77,16 @@ var level01 = function (window) {
            // createRock(300, groundY);
 
             var enemy =  game.createGameItem('enemy',25);
-            var redSquare = draw.bitmap('img/Alien.png');
-            redSquare.x = -25;
-            redSquare.y = -25;
+            var enemy = draw.bitmap('img/Alien.png');
             enemy.addChild(redSquare);
             enemy.x = 400;
             enemy.y = groundY-50;
             game.addGameItem(enemy);
             enemy.velocityX = -1;
-            enemy.rotationalVelocity = 10;
             enemy.onPlayerCollision = function() {
-                console.log('An enemy has hit Halle!');
                 game.changeIntegrity(-10);
             };
+            
 
 
 
