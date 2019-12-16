@@ -29,6 +29,8 @@ var level01 = function (window) {
         game.setDebugMode(true);
 
         // BEGIN EDITING YOUR CODE HERE
+        function createObstacle(nameOf
+
          function createSawBlade(x,y){
             var hitZoneSize = 25;
             var damageFromObstacle = 10;
@@ -72,6 +74,10 @@ var level01 = function (window) {
             game.addGameItem(enemy);
             enemy.velocityX = -1;
             enemy.rotationalVelocity = 10;
+            enemy.onPlayerCollision = function() {
+                console.log('An enemy has hit Halle!');
+                game.changeIntegrity(-10);
+            };
 
 
 
