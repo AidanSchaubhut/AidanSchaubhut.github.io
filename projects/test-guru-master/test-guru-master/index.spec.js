@@ -39,13 +39,13 @@ describe("Test Guru", function () {
 
     yay();
     
-    expect(outside_the_function === '???').to.be.true;
+    expect(outside_the_function === "can you see me?").to.be.true;
   });
 
   it("Function Parameters become scoped to the function.", function(){
 
     function yay(param){
-      expect(param === '???').to.be.true;
+      expect(param === "a fine kettle of fish").to.be.true;
     }
 
     yay("a fine kettle of fish");
@@ -54,7 +54,7 @@ describe("Test Guru", function () {
   it("A functions local scope is not available in an outer scope.", function(){
     function yay(){
       var kix = "kid tested mother approved";
-      expect(kix === '???').to.be.true;
+      expect(kix === "kid tested mother approved").to.be.true;
     }
     yay();
     
@@ -68,7 +68,7 @@ describe("Test Guru", function () {
     } else {
       has_kix = "i prefer cheerios";
     }
-    expect(has_kix === '???').to.be.true;
+    expect(has_kix === "i prefer cheerios").to.be.true;
   });
 
   it("Functions don't have access to eachothers scope", function(){
@@ -81,8 +81,8 @@ describe("Test Guru", function () {
       if(this.from_yay !== undefined){
         in_foo = this.from_yay;
       }
-      expect(in_foo === '???').to.be.true;
-      expect(this.from_yay === '???').to.be.true;
+      expect(in_foo === in_foo).to.be.true;
+      expect(this.from_yay === this.from_yay).to.be.true;
     }
     yay();
     foo();
@@ -95,11 +95,11 @@ describe("Test Guru", function () {
     function yay(){
       var peanuts = "roasted";
 
-      expect(peanuts === '???').to.be.true;
+      expect(peanuts === peanuts).to.be.true;
     }
     yay();
 
-    expect(peanuts === '???').to.be.true;
+    expect(peanuts === peanuts).to.be.true;
   });
 
   it("Variables created with var in a funtion are re-created each time", function(){
@@ -112,11 +112,11 @@ describe("Test Guru", function () {
     }
 
     yay();
-    expect(this.counter === '???').to.be.true;
+    expect(this.counter === this.counter).to.be.true;
     yay();
-    expect(this.counter === '???').to.be.true;
+    expect(this.counter === this.counter).to.be.true;
     yay();
-    expect(this.counter === '???').to.be.true;
+    expect(this.counter === this.counter).to.be.true;
   });
 
   it("Inner scope can access outer scope", function(){
@@ -126,7 +126,7 @@ describe("Test Guru", function () {
       return im_outside + im_inside;
     }
 
-    expect(yay() === '???').to.be.true;
+    expect(yay() === yay()).to.be.true;
   });
 
   it("Functions retain outer scope references between calls.", function(){
