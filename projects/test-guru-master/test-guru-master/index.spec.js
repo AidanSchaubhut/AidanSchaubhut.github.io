@@ -24,10 +24,10 @@ describe("Test Guru", function () {
     var some_number = 484;
 
     //                 ┌ Change this to what it should be
-    expect(value === '???').to.be.true;
+    expect(value === 'hello tests').to.be.true;
     
     //                        ┌ Change this to what it should be
-    expect(some_number === '???').to.be.true;
+    expect(some_number === 484).to.be.true;
   });
 
   it("Functions can access/modify variables in parent scope.", function(){
