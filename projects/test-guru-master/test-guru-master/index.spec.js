@@ -81,8 +81,8 @@ describe("Test Guru", function () {
       if(this.from_yay !== undefined){
         in_foo = this.from_yay;
       }
-      expect(in_foo === in_foo).to.be.true;
-      expect(this.from_yay === this.from_yay).to.be.true;
+      expect(in_foo === "i'm in foo").to.be.true;
+      expect(this.from_yay === undefined).to.be.true;
     }
     yay();
     foo();
@@ -95,11 +95,11 @@ describe("Test Guru", function () {
     function yay(){
       var peanuts = "roasted";
 
-      expect(peanuts === peanuts).to.be.true;
+      expect(peanuts === "roasted").to.be.true;
     }
     yay();
 
-    expect(peanuts === peanuts).to.be.true;
+    expect(peanuts === 300).to.be.true;
   });
 
   it("Variables created with var in a funtion are re-created each time", function(){
@@ -112,11 +112,11 @@ describe("Test Guru", function () {
     }
 
     yay();
-    expect(this.counter === this.counter).to.be.true;
+    expect(this.counter === undefined).to.be.true;
     yay();
-    expect(this.counter === this.counter).to.be.true;
+    expect(this.counter === undefined).to.be.true;
     yay();
-    expect(this.counter === this.counter).to.be.true;
+    expect(this.counter === undefined).to.be.true;
   });
 
   it("Inner scope can access outer scope", function(){
@@ -151,11 +151,11 @@ describe("Test Guru", function () {
     }
 
     yay();
-    expect(name === name).to.be.true;
+    expect(name === "greg").to.be.true;
     yay();
-    expect(name === name).to.be.true;
+    expect(name === "greggreg").to.be.true;
     yay();
-    expect(name === name).to.be.true;
+    expect(name === "greggreggreg").to.be.true;
 
   });
 
