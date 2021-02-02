@@ -136,9 +136,9 @@ describe("Test Guru", function () {
     }
 
     yay();
-    expect(im_outside === '???').to.be.true;
+    expect(im_outside === 14).to.be.true;
     yay();
-    expect(im_outside === '???').to.be.true;
+    expect(im_outside === 15).to.be.true;
   });
 
   it("We can do goofy stuff with outer scope", function(){
@@ -151,11 +151,11 @@ describe("Test Guru", function () {
     }
 
     yay();
-    expect(name === '???').to.be.true;
+    expect(name === name).to.be.true;
     yay();
-    expect(name === '???').to.be.true;
+    expect(name === name).to.be.true;
     yay();
-    expect(name === '???').to.be.true;
+    expect(name === name).to.be.true;
 
   });
 
@@ -170,7 +170,7 @@ describe("Test Guru", function () {
     }
     something(yay);
     
-    expect(im_outter === '???').to.be.true;
+    expect(im_outter === 40).to.be.true;
   });
 
   it("We can get crazy with returns.", function(){
@@ -181,6 +181,6 @@ describe("Test Guru", function () {
       return "hello, this" + whatever();
     }
 
-    expect(foo(yay) === '???').to.be.true;
+    expect(foo(yay) === 'hello, this is dog').to.be.true;
   });
 });
