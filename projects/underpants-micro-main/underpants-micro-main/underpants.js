@@ -107,14 +107,15 @@ _.each = function(array, func){
 
 _.filter = function(array, func){
     array = array
-    test(array);
     function test(array){
-        for(var i = 0; i<array.length; i++){
+        for(var i = 0; i<array.length/2; i++){
             if(Number.isInteger(array[i]) === false){
-                return array[i]
+                //return array[i]
+                console.log(array[i])
             }
         }
     }
+    test(array);
 }
 
 /** _.reject
