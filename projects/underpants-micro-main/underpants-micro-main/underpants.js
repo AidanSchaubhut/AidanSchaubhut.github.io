@@ -80,7 +80,13 @@ _.contains = function(array, value){
 */
 
 _.each = function(array, func){
-    
+    array = array;
+    printEach(array);
+    function printEach(array){
+        for(var i = 0; i < array.length; i++)
+            array[i] *= 5;
+            return array[i];
+    }
 }
 
 /** _.filter
@@ -99,7 +105,17 @@ _.each = function(array, func){
 *   use _.each in your implementation
 */
 
-
+_.filter = function(array, func){
+    array = array
+    test(array);
+    function test(array){
+        for(var i = 0; i<array.length; i++){
+            if(Number.isInteger(array[i]) === false){
+                return array[i]
+            }
+        }
+    }
+}
 
 /** _.reject
 * Arguments:
