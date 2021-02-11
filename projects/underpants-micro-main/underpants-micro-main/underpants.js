@@ -80,12 +80,8 @@ _.contains = function(array, value){
 */
 
 _.each = function(array, func){
-    array = array;
-    printEach(array);
-    function printEach(array){
-        for(var i = 0; i < array.length; i++)
-            array[i] *= 5;
-            return array[i];
+    for (var i = 0; i< array.length; i++){
+        func(array[i], i, array)
     }
 }
 
@@ -107,11 +103,16 @@ _.each = function(array, func){
 
 _.filter = function(array, func){
     var resultsArr = [];
-        for(var i = 0; i<array.length; i++){
-            if(func(array[i], i, array) === true){
-                resultsArr.push(array[i])
-            }
+    _.each(array, (val, i, array)=>{
+        if(func(array[i], i, array) === true){
+            resultsArr.push(array[i])
         }
+    })
+        // for(var i = 0; i<array.length; i++){
+        //     if(func(array[i], i, array) === true){
+        //         resultsArr.push(array[i])
+        //     }
+        // }
     return resultsArr;
 }
 
@@ -133,11 +134,16 @@ _.filter = function(array, func){
 
 _.reject = function(array, func){
     var resultsArr = [];
-        for(var i = 0; i<array.length; i++){
-            if(func(array[i], i, array) === false){
-                resultsArr.push(array[i])
-            }
+    _.each(array, (val, i, array)=>{
+        if(func(array[i], i, array) === false){
+            resultsArr.push(array[i])
         }
+    })
+        // for(var i = 0; i<array.length; i++){
+        //     if(func(array[i], i, array) === false){
+        //         resultsArr.push(array[i])
+        //     }
+        // }
     return resultsArr;
 }
 
@@ -157,9 +163,12 @@ _.reject = function(array, func){
 
 _.map = function(array, func){
     var newArray = [];
-        for(var i = 0; i<array.length; i++){
-            newArray.push(func(array[i], i, array))
-        }
+    _.each(array, (val, i, array)=>{
+        newArray.push(func(array[i], i, array))
+    });
+        // for(var i = 0; i<array.length; i++){
+        //     newArray.push(func(array[i], i, array))
+        // }
     return newArray;
 }
 
