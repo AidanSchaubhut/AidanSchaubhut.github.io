@@ -106,17 +106,17 @@ _.each = function(array, func){
 */
 
 _.filter = function(array, func){
-    array = array
-    function test(array){
-        for(var i = 0; i<array.length/2; i++){
-            if(Number.isInteger(array[i]) === false){
-                //return array[i]
-                console.log(array[i])
+    var resultsArr = [];
+        for(var i = 0; i<array.length; i++){
+            if(func(array[i], i, array) === true){
+                resultsArr.push(array[i])
             }
         }
-    }
-    test(array);
+    return resultsArr;
 }
+
+
+
 
 /** _.reject
 * Arguments:
@@ -131,7 +131,15 @@ _.filter = function(array, func){
 *   _.reject([1,2,3,4,5], function(e){return e%2 === 0}) -> [1,3,5]
 */
 
-//test push
+_.reject = function(array, func){
+    var resultsArr = [];
+        for(var i = 0; i<array.length; i++){
+            if(func(array[i], i, array) === false){
+                resultsArr.push(array[i])
+            }
+        }
+    return resultsArr;
+}
 
 /** _.map
 * Arguments:
@@ -147,7 +155,13 @@ _.filter = function(array, func){
 *   _.map([1,2,3,4], function(e){return e * 2}) -> [2,4,6,8]
 */
 
-
+_.map = function(array, func){
+    var newArray = [];
+        for(var i = 0; i<array.length; i++){
+            newArray.push(func(array[i], i, array))
+        }
+    return newArray;
+}
 
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
