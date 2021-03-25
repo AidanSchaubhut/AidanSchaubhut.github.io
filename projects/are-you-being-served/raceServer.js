@@ -40,7 +40,8 @@ http.createServer(function(req, res) {
             let dt = new Date();
             let endTime = dt.getTime();
             let raceTime = endTime - startTime;
-            res.write("raceTime");
+            res.write(raceTime.toString());
+            res.end();
         }
     );
     
