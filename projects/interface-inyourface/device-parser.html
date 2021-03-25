@@ -126,7 +126,7 @@
           // TODO 8: Create a success function that iterates over the list of sensors and displays them
           success: function (data) {
             var sensorsList = "";
-            for (i = 0; i < data.length; i++){
+            for (var key in data){
              $('#sensors').html(Object.keys(data).length + " sensors found!");
             }
             var html = "<li><a href=\"" + sensorsPath + "temp" + "\">" + data["temp"].name + "</a></li>";
