@@ -167,9 +167,11 @@
 
         if (value > regHighest){
           $("#reg-highest").text("Highest recorded value is " + value);
+          regHighest = value;
         }
         if(value < regLowest){
           $("#reg-lowest").text("Lowest recorded value is " + value);
+          regLowest = value;
         }
         
       }
@@ -178,9 +180,11 @@
         // Update the WebSocket polling records
         if(value > wsHighest){
           $("#ws-highest").text("Highest recorded value is " + value);
+          wsHighest = value;
         }
         if(value < wsLowest){
           $("#ws-lowest").text("Lowest recorded value is " + value);
+          wsLowest = value;
         }
         
       }
