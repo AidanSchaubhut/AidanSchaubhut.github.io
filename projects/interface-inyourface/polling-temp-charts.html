@@ -164,14 +164,25 @@
       // TODO 2: Update high and low records
       function updateRegRecords(value){
         // Update the regular polling records
-        $("#reg-highest").text("Highest recorded value is " + value);
-        $("#reg-lowest").text("Lowest recorded value is " + value);
+
+        if (value > regHighest){
+          $("#reg-highest").text("Highest recorded value is " + value);
+        }
+        if(value < regLowest){
+          $("#reg-lowest").text("Lowest recorded value is " + value);
+        }
+        
       }
 
       function updateWSRecords(value){
         // Update the WebSocket polling records
-        $("#ws-highest").text("Highest recorded value is " + value);
-        $("#ws-lowest").text("Lowest recorded value is " + value);
+        if(value > wsHighest){
+          $("#ws-highest").text("Highest recorded value is " + value);
+        }
+        if(value < wsLowest){
+          $("#ws-lowest").text("Lowest recorded value is " + value);
+        }
+        
       }
 
       // TODO 3: Regular Polling
