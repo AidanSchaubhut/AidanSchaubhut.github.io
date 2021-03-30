@@ -96,6 +96,13 @@
 <ul id="sensors-list"></ul>
 
 <script>
+  var message;
+
+  function test(){
+    console.log(message);
+  }
+
+  setInterval(test, 1000);
 (function ($) {
   function processForm(e) {
 
@@ -117,7 +124,7 @@
         $('#doc').html(data.links.doc.title + " <a href=\"" + data.links.doc.rel + "\">" + data.links.doc.rel + "</a>");
 
         // TODO 7: Generate the URL to the sensors of the device
-
+        var sensorsPath = data.url + data.resources.sensors.url;
         $.ajax({
           url: sensorsPath,
           method: 'GET',
@@ -131,6 +138,7 @@
              var html = "<li><a href=\"" + sensorsPath + key + "\">" + data[key].name + "</a></li>";
              sensorsList += html;
             }
+            message = sensorsList;
             $('#sensors-list').html(sensorsList);
           },
 
