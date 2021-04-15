@@ -20,11 +20,11 @@ function connectHardware(){
 	}, localParams.frequency);
 }
 
-function start(params){
+exports.start = function(params){
 	localParams = params ? params : localParams;
 	connectHardware();
 }
 
-function stop(){
+exports.stop = function(){
 	clearInterval(interval)
 }
