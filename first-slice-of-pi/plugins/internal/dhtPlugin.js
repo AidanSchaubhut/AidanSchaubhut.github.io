@@ -9,10 +9,13 @@ var localParams = {'frequency': 2000};
 function connectHardware(){
 	sensor = {
 	initialize: function (){sensorDriver.initialize(device.model, device.gpio)},
-	read: function (){data = sensorDriver.read(); return data;}
+	read: function (){data = sensorDriver.read(); 
+		device.temperature.value = data.temperature; 
+		device.humidity.value = data.humidity;
+	}
 	};
 
-	sensor.initialize;
+	sensor.initialize();
 	sensor.read();
 
 	 interval = setInterval(function () {

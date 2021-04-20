@@ -1,8 +1,8 @@
+var pirPlugin = require('./plugins/internal/pirPlugin');
+var dhtPlugin = require('./plugins/internal/dhtPlugin');
 var httpServer = require('./servers/http'),
 	resources = require('./resources/model');
 
-var pirPlugin = require('./plugins/internal/pirPlugin');
-var dhtPlugin = require('./plugins/internal/dhtPlugin');
 var server = httpServer.listen(resources.pi.port, function () {
 	console.log("Running the Pi on port " + resources.pi.port);
 });

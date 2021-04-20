@@ -5,7 +5,7 @@ var actuatorRoutes = require('./../routes/actuators');
 	cors = require('cors');
 	app.use(cors());
 	app.use('/pi/sensors', sensorRoutes);
-	app.use('/pi/sensors', sensorRoutes);
+	app.use('/pi/actuators', actuatorRoutes);
 	
 	app.get('/', function(req, res){
 		res.send('Please use /pi');
