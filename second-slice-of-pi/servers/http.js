@@ -2,6 +2,10 @@ var express = require('express');
 var app = express();
 var sensorRoutes = require('./../routes/sensors');
 var actuatorRoutes = require('./../routes/actuators');
+var converter = require('./../middleware/converter')
+var bodyParser = require('body-parser')
+
+	app.use(bodyParser.json());
 	cors = require('cors');
 	app.use(cors());
 	app.use('/pi/sensors', sensorRoutes);
@@ -14,5 +18,5 @@ var actuatorRoutes = require('./../routes/actuators');
 		res.send('Hi, welcome home!');
 	});
 	
-
+	app.use(converter());
 module.exports = app;
